@@ -15,7 +15,7 @@ class CreateRecipe extends Migration
     {
       Schema::create('recipe', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('event_id');
+        $table->unsignedInteger('event_id');
         $table->string('recipe_image');
         $table->date('date');
         $table->string('title');

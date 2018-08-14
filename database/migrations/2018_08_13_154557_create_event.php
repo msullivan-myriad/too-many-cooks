@@ -15,14 +15,14 @@ class CreateEvent extends Migration
     {
       Schema::create('event', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('user_id');
+        $table->unsignedInteger('user_id');
         $table->string('event_image');
         $table->date('date');
         $table->time('time');
         $table->string('location');
-        $table->integer('co_host')->nullable();
+        $table->unsignedInteger('co_host')->nullable();
         $table->boolean('private');
-        $table->integer('space_capacity');
+        $table->unsignedInteger('space_capacity');
         //Not sure exactly how food items or categories relates to this based off of the designs and the FRD
       });
     }
