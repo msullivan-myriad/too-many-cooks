@@ -20,9 +20,11 @@ class CreateUserProfile extends Migration
         $table->string('name');
         $table->string('city');
         $table->string('state');
-        $table->text('description'); //Is this field long enough to justify a text field or would you still use string here?
+        $table->text('description');
         $table->boolean('accepted_terms_of_service');
         $table->boolean('accepted_privacy_policy');
+
+        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
       });
     }
 

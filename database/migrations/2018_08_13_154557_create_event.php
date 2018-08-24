@@ -24,6 +24,8 @@ class CreateEvent extends Migration
         $table->boolean('private');
         $table->unsignedInteger('space_capacity');
         //Not sure exactly how food items or categories relates to this based off of the designs and the FRD
+
+        $table->foreign('user_id')->references('id')->on('users');
       });
     }
 
