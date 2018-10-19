@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function recipes() {
+      return $this->hasMany(Recipe::class);
+
+      //Join table has created and favorited along with recipe_id and user_id
+    }
+
+    public function favoriteRecipes() {
+      return $this->recipes()->where();
+    }
+
 }
